@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // add http.cors()
         http.cors();
         http.csrf().disable();
-        http.antMatcher("/gs-guide-websocket/**").anonymous();
+        http.authorizeRequests().antMatchers("/gs-guide-websocket/**").permitAll();
 
         // REST is stateless
         http.sessionManagement()
